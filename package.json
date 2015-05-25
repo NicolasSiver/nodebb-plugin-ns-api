@@ -1,0 +1,24 @@
+{
+  "name": "nodebb-plugin-ns-api",
+  "version": "1.0.0",
+  "description": "Additional API methods. This plugin depends on write-api plugin.",
+  "main": "plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasSiver/nodebb-plugin-ns-api.git"
+  },
+  "keywords": [
+    "nodebb",
+    "api",
+    "extended"
+  ],
+  "author": "Nicolas Siver",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NicolasSiver/nodebb-plugin-ns-api/issues"
+  },
+  "homepage": "https://github.com/NicolasSiver/nodebb-plugin-ns-api#readme"
+}
