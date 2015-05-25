@@ -5,6 +5,7 @@
         adminSockets : NodeBB.require('./src/socket.io/admin').plugins,
         db           : NodeBB.require('./src/database'),
         emitter      : NodeBB.require('./src/emitter'),
+        groups       : NodeBB.require('./src/groups'),
         meta         : NodeBB.require('./src/meta'),
         pluginSockets: NodeBB.require('./src/socket.io/plugins'),
         postTools    : NodeBB.require('./src/postTools'),
