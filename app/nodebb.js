@@ -35,6 +35,7 @@
          * NODE_ENV: 'development'
          */
         nconf   : NodeBB.require('nconf'),
-        passport: NodeBB.require('passport')
+        passport: NodeBB.require('passport'),
+        express : NodeBB.require('express')
     };
 })(module, require.main);
