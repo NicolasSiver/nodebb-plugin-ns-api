@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/NicolasSiver/nodebb-plugin-ns-api/issues"
   },
-  "homepage": "https://github.com/NicolasSiver/nodebb-plugin-ns-api#readme"
+  "homepage": "https://github.com/NicolasSiver/nodebb-plugin-ns-api#readme",
+  "dependencies": {
+    "async": "^1.0.0",
+    "passport-http-bearer": "^1.0.1"
+  }
 }
