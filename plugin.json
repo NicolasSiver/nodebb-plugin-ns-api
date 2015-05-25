@@ -6,12 +6,8 @@
   "library": "./plugin.js",
   "hooks": [
     {
-      "hook": "static:app.load",
-      "method": "hooks.statics.load"
-    },
-    {
-      "hook": "action:middleware.authenticate",
-      "method": "hooks.actions.middlewareAuthenticate"
+      "hook": "filter:plugin.write-api.routes",
+      "method": "hooks.filters.apiRoutes"
     }
   ]
 }
