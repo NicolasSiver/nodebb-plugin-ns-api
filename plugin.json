@@ -1,0 +1,17 @@
+{
+  "id": "nodebb-plugin-ns-api",
+  "name": "NodeBB API",
+  "description": "Additional API methods. This plugin depends on write-api plugin.",
+  "url": "https://github.com/NicolasSiver/nodebb-plugin-ns-api",
+  "library": "./plugin.js",
+  "hooks": [
+    {
+      "hook": "static:app.load",
+      "method": "hooks.statics.load"
+    },
+    {
+      "hook": "action:middleware.authenticate",
+      "method": "hooks.actions.middlewareAuthenticate"
+    }
+  ]
+}
