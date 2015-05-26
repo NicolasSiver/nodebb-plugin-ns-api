@@ -7,6 +7,14 @@ In order to use these extended api methods, you should have [Write Api Plugin](h
 
 ## API
 
+### /api/v1/users/:uid
+
+Profile full data-set about the user
+
+**Result:**
+
+    {user data}
+
 ### /api/v1/users/:uid/groups
 
 Provides all groups to which user belongs.
