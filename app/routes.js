@@ -21,7 +21,7 @@
             }, function (error, results) {
                 if (error) {
                     return errorHandler.respond(500, res);
-                } else if (!results.user) {
+                } else if (!results.user || (results.user && results.user.uid == 0)) {
                     return errorHandler.respond(404, res);
                 }
 
