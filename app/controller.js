@@ -8,41 +8,37 @@
         groups = nodebb.groups;
 
     Controller.getUserGroups = function (uid, callback) {
-        db.getSortedSetRevRange('groups:createtime', 0, -1, function (error, groupNames) {
-            if (error) {
-                return callback(error);
-            }
+        var groupsData;
 
-            var groupObjects = groupNames.map(function (name) {
-                return 'group:' + name;
-            });
+        async.waterfall([
+            async.apply(db.getSortedSetRevRange, 'groups:createtime', 0, -1),
+            function (groupNames, next) {
+                var groupObjects = groupNames.map(function (name) {
+                    return 'group:' + name;
+                });
 
-            db.getObjectsFields(groupObjects, ['name'], function (error, groupData) {
-                if (error) {
-                    return callback(error);
-                }
+                db.getObjectsFields(groupObjects, ['name'], next);
+            },
+            function (groupData, next) {
+                groupsData = groupData;
 
                 var groupSets = groupData.map(function (group) {
                     return 'group:' + group.name + ':members';
                 });
 
-                db.isMemberOfSortedSets(groupSets, uid, function (err, membership) {
-                    if (err) {
-                        return callback(err);
+                db.isMemberOfSortedSets(groupSets, uid, next);
+            },
+            function (membership, next) {
+                var memberOf = [];
+                membership.forEach(function (isMember, index) {
+                    if (isMember) {
+                        memberOf.push(groupsData[index].name);
                     }
-
-                    var memberOf = [];
-                    membership.forEach(function (isMember, index) {
-                        if (isMember) {
-                            memberOf.push(groupData[index].name);
-                        }
-                    });
-
-                    groups.getGroupsData(memberOf, callback);
                 });
-            });
 
-        });
+                groups.getGroupsData(memberOf, next);
+            }
+        ], callback);
     };
 
 })(module.exports);
