@@ -1,11 +1,12 @@
 (function (Module) {
     "use strict";
 
-    var async  = require('async'),
+    var async      = require('async'),
 
-        nodebb = require('./nodebb'),
-        groups = nodebb.groups,
-        user   = nodebb.user;
+        controller = require('./controller'),
+        nodebb     = require('./nodebb'),
+        groups     = nodebb.groups,
+        user       = nodebb.user;
 
     Module.exports = function (payload, callback) {
         var router        = payload.router,
@@ -16,7 +17,7 @@
         router.get('/users/:uid/groups', apiMiddleware.requireUser, function (req, res) {
             async.parallel({
                 user  : async.apply(user.getUserFields, req.params.uid, ['uid', 'username']),
-                groups: async.apply(groups.getUserGroups, [req.params.uid])
+                groups: async.apply(controller.getUserGroups, [req.params.uid])
             }, function (error, results) {
                 if (error) {
                     return errorHandler.respond(500, res);
@@ -26,7 +27,7 @@
 
                 res.json({
                     user  : results.user,
-                    groups: results.groups[0]
+                    groups: results.groups
                 });
             });
         });
