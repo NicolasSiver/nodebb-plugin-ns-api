@@ -16,7 +16,7 @@
     "extended"
   ],
   "peerDependencies": {
-    "nodebb-plugin-write-api": "~3.0"
+    "nodebb-plugin-write-api": "~3"
   },
   "author": "Nicolas Siver",
   "license": "MIT",
