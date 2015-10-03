@@ -26,5 +26,8 @@
   "homepage": "https://github.com/NicolasSiver/nodebb-plugin-ns-api#readme",
   "dependencies": {
     "async": "^1.0.0"
+  },
+  "nbbpm": {
+    "compatibility": "^0.8.0"
   }
 }
