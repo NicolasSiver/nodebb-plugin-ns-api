@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-ns-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Additional API methods. This plugin depends on write-api plugin.",
   "main": "plugin.js",
   "scripts": {
