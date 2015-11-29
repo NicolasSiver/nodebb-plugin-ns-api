@@ -1,4 +1,5 @@
 # NodeBB: API
+
 Additional API methods. This plugin depends on write-api plugin.
 
 ![Version](https://img.shields.io/npm/v/nodebb-plugin-ns-api.svg)
