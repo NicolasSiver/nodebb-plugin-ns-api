@@ -3,7 +3,7 @@
   "name": "NodeBB API",
   "description": "Additional API methods. This plugin depends on write-api plugin.",
   "url": "https://github.com/NicolasSiver/nodebb-plugin-ns-api",
-  "library": "./plugin.js",
+  "library": "./plugin/index.js",
   "hooks": [
     {
       "hook": "filter:plugin.write-api.routes",
