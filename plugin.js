@@ -1,7 +1,7 @@
 (function (Plugin) {
     'use strict';
 
-    var routes = require('./app/routes');
+    var routes = require('./plugin/routes');
 
     //NodeBB list of Hooks: https://github.com/NodeBB/NodeBB/wiki/Hooks
     Plugin.hooks = {
