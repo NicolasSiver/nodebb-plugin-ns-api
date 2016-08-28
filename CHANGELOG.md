@@ -1,5 +1,10 @@
 #Changelog
 
+### v2.1.0 - 8/28/2016
+
+- Update 3rd party libraries
+- Override online status for user response
+
 ### v2.0.1 - 4/7/2016
 
 - Compatibility with 1.0 NodeBB
