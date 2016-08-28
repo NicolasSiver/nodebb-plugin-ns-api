@@ -22,6 +22,8 @@
                     return errorHandler.respond(404, res);
                 }
 
+                userData.status = user.getStatus(userData);
+
                 res.json(userData);
             });
         });
